@@ -51,6 +51,12 @@
     <Filter Include="Source\PCH">
       <UniqueIdentifier>{8f8a08ea-2ede-443d-a285-a9810d042165}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Platform\Win32\Public\Interfaces">
+      <UniqueIdentifier>{2ef94a0e-bfe4-44ef-9a74-4c24ad391195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Platform\Win32\Public\Classes">
+      <UniqueIdentifier>{bf38acba-d3dd-4137-96c9-9437a8f0df6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Apollo.cpp">
@@ -62,18 +68,33 @@
     <ClCompile Include="Source\Platform\Win32\WinObject.cpp">
       <Filter>Source\Platform\Win32\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Platform\Win32\WinUtils.cpp">
+      <Filter>Source\Platform\Win32\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Apollo.h">
       <Filter>Source\PCH</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Platform\Win32\Window.h">
-      <Filter>Source\Platform\Win32\Public</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Platform\Win32\WinEntry.h">
       <Filter>Source\Platform\Win32\Public</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Core\Definitions.h">
+      <Filter>Source\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Core.h">
+      <Filter>Source\Core\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\IApplication.h">
+      <Filter>Source\Platform\Win32\Public\Interfaces</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Platform\Win32\WinObject.h">
+      <Filter>Source\Platform\Win32\Public\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\Window.h">
+      <Filter>Source\Platform\Win32\Public\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\WinUtils.h">
       <Filter>Source\Platform\Win32\Public</Filter>
     </ClInclude>
   </ItemGroup>
