@@ -48,5 +48,18 @@
     <Filter Include="Source\Platform\Win32\Public">
       <UniqueIdentifier>{96aef0e5-6476-4fd0-968f-124882f84253}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\PCH">
+      <UniqueIdentifier>{8f8a08ea-2ede-443d-a285-a9810d042165}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Apollo.cpp">
+      <Filter>Source\PCH</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Apollo.h">
+      <Filter>Source\PCH</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
