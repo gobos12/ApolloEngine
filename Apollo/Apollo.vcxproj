@@ -108,6 +108,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>Apollo.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\orion\source\repos\ApolloEngine\Apollo\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>NotSet</SubSystem>
@@ -126,6 +127,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>Apollo.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\orion\source\repos\ApolloEngine\Apollo\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>NotSet</SubSystem>
@@ -136,9 +138,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Apollo.cpp" />
+    <ClCompile Include="Source\Platform\Win32\Window.cpp" />
+    <ClCompile Include="Source\Platform\Win32\WinObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Apollo.h" />
+    <ClInclude Include="Source\Platform\Win32\Window.h" />
+    <ClInclude Include="Source\Platform\Win32\WinEntry.h" />
+    <ClInclude Include="Source\Platform\Win32\WinObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

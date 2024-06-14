@@ -56,10 +56,25 @@
     <ClCompile Include="Source\Apollo.cpp">
       <Filter>Source\PCH</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Platform\Win32\Window.cpp">
+      <Filter>Source\Platform\Win32\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Platform\Win32\WinObject.cpp">
+      <Filter>Source\Platform\Win32\Private</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Apollo.h">
       <Filter>Source\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\Window.h">
+      <Filter>Source\Platform\Win32\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\WinEntry.h">
+      <Filter>Source\Platform\Win32\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\Win32\WinObject.h">
+      <Filter>Source\Platform\Win32\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
