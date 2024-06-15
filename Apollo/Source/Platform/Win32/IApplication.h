@@ -1,4 +1,4 @@
-#include "Apollo.h"
+#pragma once
 
 #define ENTRYAPP(x) Win32::IApplication* EntryApplication() { return new x; }
 

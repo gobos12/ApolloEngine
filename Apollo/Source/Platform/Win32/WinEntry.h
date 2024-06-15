@@ -3,7 +3,7 @@
 
 extern Win32::IApplication* EntryApplication();
 
-int CALLBACK WinEntry(HINSTANCE, HINSTANCE, LPSTR, INT)
+int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	auto EntryApp = EntryApplication();
 

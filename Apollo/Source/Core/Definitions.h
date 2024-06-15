@@ -1,3 +1,5 @@
+#pragma once
+
 #ifdef BUILD_DLL
 	#define APOLLO_API __declspec(dllexport)
 #else

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Core/Definitions.h"
 
 #ifdef WIN32
