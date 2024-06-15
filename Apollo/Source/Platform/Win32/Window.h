@@ -17,7 +17,16 @@ namespace Win32
 		~Window() { }
 
 		virtual VOID Initialize() override;
+
 		virtual LRESULT MessageHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) override;
+
+		VOID RedrawWindow();
+
+		VOID OnNonClientCreate();
+
+		VOID OnNonClientActivate(BOOL active);
+
+		VOID OnNonClientPaint(HRGN region);
 
 	protected:
 		SIZE			m_Size;

@@ -29,7 +29,7 @@ public: /* GETTERS & SETTERS*/
 	static HICON GetMainIcon() { return instance->m_MainIcon; }
 	static VOID SetMainIcon(UINT id) { LoadIcon(HInstance(), MAKEINTRESOURCE(id)); }
 
-	static WCHAR* SetGetBootTime() { return instance->m_BootTime; }
+	static WCHAR* GetBootTime() { return instance->m_BootTime; }
 
 	static WCHAR* GetSplashURL() { return instance->m_SplashURL; }
 	static VOID SetSplashURL(UINT id) { LoadString(HInstance(), id, instance->m_SplashURL, MAX_STRING_LEN); }

@@ -1,6 +1,8 @@
 #include "Apollo.h"
 #include "Window.h"
 
+#define DCX_USESTYLE 0x00010000
+
 namespace Win32
 {
 	Win32::Window::Window(std::wstring className, HICON icon, WindowType type)
@@ -37,6 +39,55 @@ namespace Win32
 
 	LRESULT Win32::Window::MessageHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	{
+		/* Client messages -> general, high-level messages to change the INSIDE of a window */
+		/* Non-Client messages -> chances the window itself */
+
+		switch (msg)
+		{
+		case WM_NCCREATE: { OnNonClientCreate(); } return TRUE;
+		case WM_NCACTIVATE: { OnNonClientActivate(LOWORD(wParam) != WA_INACTIVE); } return TRUE;
+		case WM_NCPAINT: { OnNonClientPaint((HRGN)wParam); } return FALSE;
+		case WM_TIMER: { RedrawWindow(); } break;
+		}
+
 		return WinObject::MessageHandler(hWnd, msg, wParam, lParam);
+	}
+
+	VOID Window::RedrawWindow()
+	{
+		// Reset window
+		SetWindowPos(Handle(), 0, 0, 0, 0, 0, 
+			SWP_NOMOVE | SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE | SWP_DRAWFRAME | SWP_FRAMECHANGED);
+
+		SendMessage(Handle(), WM_PAINT, 0, 0);
+	}
+
+	VOID Window::OnNonClientCreate()
+	{
+		SetTimer(Handle(), 1, 100, NULL);
+		SetWindowTheme(Handle(), L"", L"");
+	}
+
+	VOID Window::OnNonClientActivate(BOOL active)
+	{
+		m_IsActive = active;
+	}
+
+	VOID Window::OnNonClientPaint(HRGN region)
+	{
+		HDC hdc = GetDCEx(m_Handle, region, DCX_WINDOW | DCX_INTERSECTRGN | DCX_USESTYLE);
+		RECT rect;
+		GetWindowRect(Handle(), &rect);
+
+		SIZE size = SIZE{ rect.right - rect.left, rect.bottom - rect.top };
+		
+		HBITMAP hbmMem = CreateCompatibleBitmap(hdc, size.cx, size.cy);
+		HANDLE hold = SelectObject(hdc, hbmMem);
+
+		HBRUSH brush = CreateSolidBrush(RGB(10, 20, 30));
+		FillRect(hdc, new RECT{ 0, 0, size.cx, size.cy }, brush);
+		DeleteObject(brush); // deallocate mem
+
+		ReleaseDC(Handle(), hdc);
 	}
 }

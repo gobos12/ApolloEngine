@@ -1,5 +1,6 @@
 #include "Apollo.h"
 #include "IApplication.h"
+#include "Common/CmdLineArgs.h"
 
 extern Win32::IApplication* EntryApplication();
 
@@ -9,6 +10,9 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	GameSettings gameSettings;
 	EntryApp->SetupGameSettings();
+
+	CmdLineArgs::ReadArguments();
+	Debug logger;
 
 	EntryApp->PreInitialize();
 	EntryApp->Initialize();

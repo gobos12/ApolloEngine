@@ -91,6 +91,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Apollo.cpp" />
+    <ClCompile Include="Source\Common\CmdLineArgs.cpp" />
+    <ClCompile Include="Source\Common\Debug.cpp" />
+    <ClCompile Include="Source\Common\Time.cpp" />
     <ClCompile Include="Source\Core\GameSettings.cpp" />
     <ClCompile Include="Source\Engine\Game.cpp" />
     <ClCompile Include="Source\Engine\OEngine.cpp" />
@@ -100,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Apollo.h" />
+    <ClInclude Include="Source\Common\CmdLineArgs.h" />
+    <ClInclude Include="Source\Common\Debug.h" />
+    <ClInclude Include="Source\Common\Time.h" />
     <ClInclude Include="Source\Core\Core.h" />
     <ClInclude Include="Source\Core\Definitions.h" />
     <ClInclude Include="Source\Core\GameSettings.h" />

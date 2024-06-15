@@ -5,6 +5,9 @@
 
 #include "Engine/OEngine.h"
 
+#include "Common/Time.h"
+#include "Common/Debug.h"
+
 #ifdef WIN32
 	#include "Platform/Win32/WinUtils.h"
 	#include "Platform/Win32/WinObject.h"
