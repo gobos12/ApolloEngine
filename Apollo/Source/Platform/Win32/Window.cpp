@@ -4,12 +4,11 @@
 namespace Win32
 {
 	Win32::Window::Window(std::wstring className, HICON icon, WindowType type)
-		: WinObject(className, icon)
+		: WinObject(className, icon), m_Type(type)
 	{
-		Size(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+		SetSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 	}
 
-	Win32::Window::~Window() { }
 
 	VOID Win32::Window::Initialize()
 	{

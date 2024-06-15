@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Core/Definitions.h"
+#include "Core/GameSettings.h"
+
+#include "Engine/OEngine.h"
 
 #ifdef WIN32
 	#include "Platform/Win32/WinUtils.h"

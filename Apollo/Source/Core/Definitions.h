@@ -6,4 +6,6 @@
 	#define APOLLO_API __declspec(dllimport)
 #endif
 
+#define MAX_STRING_LEN 256
+
 #define HInstance() GetModuleHandle(NULL)  // hInstance callback

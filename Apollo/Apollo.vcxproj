@@ -91,6 +91,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Apollo.cpp" />
+    <ClCompile Include="Source\Core\GameSettings.cpp" />
+    <ClCompile Include="Source\Engine\Game.cpp" />
+    <ClCompile Include="Source\Engine\OEngine.cpp" />
     <ClCompile Include="Source\Platform\Win32\Window.cpp" />
     <ClCompile Include="Source\Platform\Win32\WinObject.cpp" />
     <ClCompile Include="Source\Platform\Win32\WinUtils.cpp" />
@@ -99,6 +102,9 @@
     <ClInclude Include="Source\Apollo.h" />
     <ClInclude Include="Source\Core\Core.h" />
     <ClInclude Include="Source\Core\Definitions.h" />
+    <ClInclude Include="Source\Core\GameSettings.h" />
+    <ClInclude Include="Source\Engine\Game.h" />
+    <ClInclude Include="Source\Engine\OEngine.h" />
     <ClInclude Include="Source\Platform\Win32\IApplication.h" />
     <ClInclude Include="Source\Platform\Win32\Window.h" />
     <ClInclude Include="Source\Platform\Win32\WinEntry.h" />

@@ -14,7 +14,7 @@ namespace Win32
 		Window(std::wstring className, HICON icon, WindowType type = RESIZEABLE);
 
 		/* Window Deconstructor */
-		~Window();
+		~Window() { }
 
 		virtual VOID Initialize() override;
 		virtual LRESULT MessageHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) override;
@@ -25,10 +25,10 @@ namespace Win32
 		BOOL			m_IsActive;
 
 	public: /* GETTERS */
-		SIZE Size() { return m_Size; }
+		SIZE GetSize() { return m_Size; }
 
 	protected: /* SETTERS */
-		VOID Size(SIZE size) { m_Size = size; }
-		VOID Size(INT cx, INT cy) { m_Size.cx = cx; m_Size.cy = cy; }
+		VOID SetSize(SIZE size) { m_Size = size; }
+		VOID SetSize(INT cx, INT cy) { m_Size.cx = cx; m_Size.cy = cy; }
 	};
 }

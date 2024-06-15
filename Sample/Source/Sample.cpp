@@ -1,12 +1,15 @@
 #include "Sample.h"
+#include "Engine/Game.h"
 #include "Platform/Win32/WinEntry.h"
 
-class Sample : public Win32::IApplication
+class Sample : public Apollo::Game
 {
 public:
-	VOID SetupGameSettings() { }
+	Sample() { }
 
-	VOID PreInitialize() { }
+	~Sample() { }
+
+	VOID SetupGameSettings();
 
 	/* Called to initialize BlankProject */
 	VOID Initialize() { }
@@ -16,3 +19,9 @@ public:
 };
 
 ENTRYAPP(Sample)
+
+VOID Sample::SetupGameSettings()
+{
+	GameSettings::SetGameName(IDS_GAMENAME);
+	GameSettings::SetShortName(IDS_SHORTNAME);
+}

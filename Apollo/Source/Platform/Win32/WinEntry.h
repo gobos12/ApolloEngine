@@ -7,7 +7,9 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	auto EntryApp = EntryApplication();
 
+	GameSettings gameSettings;
 	EntryApp->SetupGameSettings();
+
 	EntryApp->PreInitialize();
 	EntryApp->Initialize();
 
