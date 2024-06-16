@@ -11,5 +11,3 @@ GameSettings::GameSettings()
 	wcscpy_s(instance->m_ShortName, L"UNDEFINED");
 	wcscpy_s(instance->m_BootTime, Time::GetDateTimeStr(TRUE).c_str());
 }
-
-GameSettings::~GameSettings() { }

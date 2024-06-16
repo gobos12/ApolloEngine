@@ -4,6 +4,7 @@ class APOLLO_API OEngine;
 
 namespace Engine
 {
+	/* INT enum that represents the various engine types for Apollo */
 	enum EngineMode : INT
 	{
 		NONE,
@@ -15,8 +16,11 @@ namespace Engine
 
 	extern OEngine g_Engine;
 
+	
 	VOID APOLLO_API SetMode(EngineMode mode);
 	EngineMode APOLLO_API GetMode();
+
+	/* Converts engine type to a string for debugging */
 	std::wstring APOLLO_API EngineModeToString();
 }
 

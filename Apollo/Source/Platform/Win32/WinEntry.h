@@ -4,7 +4,7 @@
 
 extern Win32::IApplication* EntryApplication();
 
-int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
+int CALLBACK WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ INT)
 {
 	auto EntryApp = EntryApplication();
 
@@ -17,6 +17,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	EntryApp->PreInitialize();
 	EntryApp->Initialize();
 
+	// Core Loop
 	MSG msg{ 0 };
 	while (msg.message != WM_QUIT)
 	{

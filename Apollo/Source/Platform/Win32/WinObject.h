@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable: 4251)  // disables _dllexport warning C4251 for std::wstring m_Class. 
 #include <string>
 
 namespace Win32
@@ -11,9 +12,9 @@ namespace Win32
 		WinObject(std::wstring className, HICON icon);
 
 		/* WinObject Deconstructor */
-		~WinObject();
+		~WinObject() { }
 
-		/* Registers a new Window Class */
+		/* Registers a new Window class */
 		virtual VOID RegisterNewClass();
 
 		/* Initalize WinObject */

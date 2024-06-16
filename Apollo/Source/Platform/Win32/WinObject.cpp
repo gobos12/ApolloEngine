@@ -5,8 +5,6 @@ namespace Win32
 {
 	WinObject::WinObject(std::wstring className, HICON icon) : m_Class(className), m_hIcon(icon) { }
 
-	WinObject::~WinObject() { }
-
 	VOID WinObject::RegisterNewClass()
 	{
 		WNDCLASSEX wcex;

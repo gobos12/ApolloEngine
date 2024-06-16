@@ -12,6 +12,7 @@ public:
 	Debug();
 	~Debug() { }
 
+	/* Log statement that can handle multiple arguments */
 	static VOID Log(const WCHAR* fmt, ...);
 
 	/* Returns directory location where log files are dumped */

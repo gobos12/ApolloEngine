@@ -3,8 +3,6 @@
 #include <sstream>
 #include <iomanip>
 
-// Unstripped = 00:00:00
-// Stripped = 000000
 std::wstring Time::GetTime(BOOL stripped)
 {
 	time_t now = time(0);
@@ -14,6 +12,8 @@ std::wstring Time::GetTime(BOOL stripped)
 	wss << std::put_time(&ltm, L"%T");
 	std::wstring timeStr = wss.str();
 
+	// Unstripped = 00:00:00
+	// Stripped = 000000
 	if (stripped)
 	{
 		std::wstring chars = L":";
@@ -35,6 +35,8 @@ std::wstring Time::GetDate(BOOL stripped)
 	wss << std::put_time(&ltm, L"%d/%m/%y");
 	std::wstring timeStr = wss.str();
 
+	// Unstripped = 00/00/00
+	// Stripped = 000000
 	if (stripped)
 	{
 		std::wstring chars = L"/";

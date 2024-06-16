@@ -1,5 +1,7 @@
 #pragma once
 
+/* Contains necessary definitions for the Apollo Engine */
+
 #ifdef BUILD_DLL
 	#define APOLLO_API __declspec(dllexport)
 #else

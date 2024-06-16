@@ -8,10 +8,12 @@ namespace Engine
 	{
 		g_Engine.SetEngineMode(mode);
 	}
+
 	EngineMode GetMode()
 	{
 		return g_Engine.GetEngineMode();
 	}
+
 	std::wstring EngineModeToString()
 	{
 		switch (Engine::GetMode())

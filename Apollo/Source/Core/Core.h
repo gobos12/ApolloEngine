@@ -1,5 +1,7 @@
 #pragma once
 
+/* Contains necessary #include statements for the Apollo Engine */
+
 #include "Core/Definitions.h"
 #include "Core/GameSettings.h"
 
