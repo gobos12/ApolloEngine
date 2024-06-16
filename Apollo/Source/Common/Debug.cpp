@@ -11,7 +11,7 @@ Debug::Debug()
 	instance = this;
 }
 
-VOID Debug::Log(const WCHAR* fmt, ...)
+VOID Debug::Log(LogType type, const WCHAR* fmt, ...)
 {
 	WCHAR buffer[MAX_LOG_LEN];
 	va_list args;
@@ -26,7 +26,20 @@ VOID Debug::Log(const WCHAR* fmt, ...)
 	if (outfile.is_open())
 	{
 		std::wstring s = buffer;
-		outfile << L"[" << Time::GetDateTimeStr() << L"]" << s;
+
+		switch (type)
+		{
+		case LogType::L_DEBUG:
+			outfile << L"[" << Time::GetDateTimeStr() << L"]" << s;
+			break;
+		case LogType::L_WARNING:
+			outfile << L"[" << Time::GetDateTimeStr() << L"]" << L"WARNING: " << s;
+			break;
+		case LogType::L_ERROR:
+			outfile << L"[" << Time::GetDateTimeStr() << L"]" << L"ERROR: " << s;
+			break;
+		}
+
 		outfile.close();
 		OutputDebugString(s.c_str());
 	}
@@ -61,7 +74,7 @@ std::wstring Debug::LogFile()
 
 VOID Debug::LogSeparator()
 {
-	std::wstring s = L"\n---------------------------------------------------------------------------------------\n\n";
+	std::wstring s = L"\n--------------------------------------------------------------------------------------\n\n";
 
 #ifdef _DEBUG
 	std::wfstream outfile;
@@ -109,11 +122,11 @@ VOID Debug::StartMTail()
 {
 	if (IsMTailRunning())
 	{
-		Debug::Log(L"--MTail failed to start -- Already Running\n");
+		Debug::Log(LogType::L_ERROR, L"--MTail failed to start -- Already Running\n");
 		return;
 	}
 
-	Debug::Log(L"--Starting MTail\n");
+	Debug::Log(LogType::L_DEBUG, L"--Starting MTail\n");
 	WCHAR path[MAX_PATH] = { 0 };
 	GetCurrentDirectoryW(MAX_PATH, path);
 	std::wstring url = path + std::wstring(L"/mTAIL.exe");

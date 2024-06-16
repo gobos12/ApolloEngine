@@ -1,6 +1,13 @@
 #pragma once
 #include <string>
 
+enum LogType : INT
+{
+	L_DEBUG,
+	L_WARNING,
+	L_ERROR
+};
+
 class APOLLO_API Debug
 {
 private:
@@ -12,8 +19,8 @@ public:
 	Debug();
 	~Debug() { }
 
-	/* Log statement that can handle multiple arguments */
-	static VOID Log(const WCHAR* fmt, ...);
+	/* Generic log statement */
+	static VOID Log(LogType type, const WCHAR* fmt, ...);
 
 	/* Returns directory location where log files are dumped */
 	static std::wstring LogDirectory();
