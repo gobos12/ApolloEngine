@@ -8,10 +8,10 @@ namespace Apollo
 	VOID Game::PreInitialize()
 	{
 		Debug::LogSeparator();
-		Debug::Log(LogType::L_DEBUG, L"Application starting...\n");
-		Debug::Log(LogType::L_DEBUG, L"Game Name: %s\n", GameSettings::GetGameName());
-		Debug::Log(LogType::L_DEBUG, L"Boot Time: %s\n", Time::GetDateTimeStr().c_str());
-		Debug::Log(LogType::L_DEBUG, L"Engine Mode: %s\n", Engine::EngineModeToString().c_str());
+		Debug::Log(L_DEBUG, L"Application starting...\n");
+		Debug::Log(L_DEBUG, L"Game Name: %s\n", GameSettings::GetGameName());
+		Debug::Log(L_DEBUG, L"Boot Time: %s\n", Time::GetDateTimeStr().c_str());
+		Debug::Log(L_DEBUG, L"Engine Mode: %s\n", Engine::EngineModeToString().c_str());
 		Debug::LogSeparator();
 
 		Win32::Window::RegisterNewClass();

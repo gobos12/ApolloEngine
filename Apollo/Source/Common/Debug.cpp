@@ -122,14 +122,14 @@ VOID Debug::StartMTail()
 {
 	if (IsMTailRunning())
 	{
-		Debug::Log(LogType::L_ERROR, L"--MTail failed to start -- Already Running\n");
+		Debug::Log(L_ERROR, L"--MTail failed to start -- Already Running\n");
 		return;
 	}
 
-	Debug::Log(LogType::L_DEBUG, L"--Starting MTail\n");
+	Debug::Log(L_DEBUG, L"--Starting MTail...\n");
 	WCHAR path[MAX_PATH] = { 0 };
 	GetCurrentDirectoryW(MAX_PATH, path);
 	std::wstring url = path + std::wstring(L"/mTAIL.exe");
-	std::wstring params = L" \"" + LogDirectory() + L"/" + LogFile() + L"\" /start";
+	std::wstring params = L" \"" + (LogDirectory() + L"/" + LogFile()) + L"\" /start";
 	ShellExecute(0, NULL, url.c_str(), params.c_str(), NULL, SW_SHOWDEFAULT);
 }

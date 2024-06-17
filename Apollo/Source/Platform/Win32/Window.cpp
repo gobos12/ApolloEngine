@@ -84,7 +84,7 @@ namespace Win32
 		HBITMAP hbmMem = CreateCompatibleBitmap(hdc, size.cx, size.cy);
 		HANDLE hold = SelectObject(hdc, hbmMem);
 
-		HBRUSH brush = CreateSolidBrush(RGB(10, 20, 30));
+		HBRUSH brush = CreateSolidBrush(RGB(255, 255, 255));
 		FillRect(hdc, new RECT{ 0, 0, size.cx, size.cy }, brush);
 		DeleteObject(brush); // deallocate mem
 
